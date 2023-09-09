@@ -5,11 +5,14 @@
 ######################################
 
 clear
-apt-get install nodejs -y 
-systemctl disable ws-stunnel
-systemctl disable ws
-systemctl stop ws-stunnel
-systemctl stop ws
+read -p "$( echo -e "Press Enter For Starting Installation") "
+echo ""
+
+apt-get install nodejs -y >/dev/null 2>&1
+systemctl disable ws-stunnel >/dev/null 2>&1
+systemctl disable ws >/dev/null 2>&1
+systemctl stop ws-stunnel >/dev/null 2>&1
+systemctl stop ws >/dev/null 2>&1
 
 # Download Node
 wget -q -O /usr/local/bin/ws.js "https://raw.githubusercontent.com/xsm-syn/fix/main/ws.js"
