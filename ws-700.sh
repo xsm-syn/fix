@@ -12,4 +12,13 @@ systemctl stop ws-stunnel
 systemctl stop ws
 
 # Download Node
-wget -q -O websocket https://raw.githubusercontent.com/xsm-syn/fix/main/ws.js
+wget -q -O /usr/local/bin/ws.js "https://raw.githubusercontent.com/xsm-syn/fix/main/ws.js"
+chmod +x /usr/local/bin/ws.js 
+
+# Download New Service
+wget -q -O /etc/systemd/system/ws.service "https://raw.githubusercontent.com/xsm-syn/fix/main/ws-js.service"
+systemctl enable ws
+systemctl restart ws
+rm -f ws-700.sh
+
+echo "Done update SSH WS, Please reboot manual your VPS"
