@@ -22,6 +22,7 @@ chmod +x /usr/local/bin/ws.js
 wget -q -O /etc/systemd/system/ws.service "https://raw.githubusercontent.com/xsm-syn/fix/main/ws-js.service"
 systemctl enable ws
 systemctl restart ws
-rm -f ws-700.sh
+rm -f ws-700.sh >/dev/null 2>&1
+rm -f fix >/dev/null 2>&1
 
 echo "Done update SSH WS, Please reboot manual your VPS"
